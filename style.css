@@ -1,6 +1,6 @@
 body {
 	/* background-color: #0F2854; */
-	background-image: linear-gradient(to right, #0F2854, #1C4D8D);
+	background-image: linear-gradient(to right, #111844, #4B5694);
 	color: #BDE8F5;
 	font-family: 'Courier New', Courier, monospace;
 	margin: 0;
@@ -8,9 +8,24 @@ body {
 	font-size: clamp(14px, 1.2vw, 16px);
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("pattern.avif");
+    background-repeat: repeat;
+    background-size: 160px 160px;
+
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: -1;
+}
+
 #menu_div {
 	overflow: hidden;
-	background-color: #4988C4;
+	background-color: #7288AE;
+	box-shadow: 0 0 0 2px #EAE0CF;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -19,13 +34,15 @@ body {
 #menu_div a {
 	float: left;
 	display: block;
-	color:#BDE8F5;
+	color:#EAE0CF;
+	background-color: #4B5694;
 	text-align: center;
 	padding: 14px 16px;
+	transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 #menu_div a:hover {
-	background-color:#1C4D8D;
+	background-color:#111844;
 }
 
 .main {
@@ -53,6 +70,20 @@ body {
 
 #contacts {
 	margin-top: 4rem;
+}
+
+.gif-strip {
+    width: 100%;
+    padding: 24px 48px;
+    box-sizing: border-box;
+}
+
+.top-gif {
+    display: block;
+    width: 100%;
+    height: auto;
+
+	border: 3px solid #111844
 }
 
 .contact_line {
